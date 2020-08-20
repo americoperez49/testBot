@@ -180,6 +180,9 @@ module.exports = (robot) ->
         console.log "[GROUPME RESPONSE] #{response.statusCode} #{data}"
     req.end(jsonTWO)
 
+  robot.hear /help/i, (res) ->
+    res.send "Here are the things you can do" + "\n" + "test"
+
   robot.hear /(.*)@all(.*)/i, (res) ->
     """@all command"""
     text = res.match[0]
