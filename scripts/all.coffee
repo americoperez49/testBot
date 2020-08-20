@@ -114,7 +114,42 @@ module.exports = (robot) ->
       res.send "Could not find a user by the name #{target}"
   
   robot.hear /badger/i, (res) ->
-    res.send "we dont need badgers"
+      message =
+      'text': Skateparks,
+      'bot_id': bot_id,
+      'attachments': [
+          {
+            "type": "location",
+            "lat": "30.6441",
+            "lng": "-96.3648",
+            "name": "Williamshlong"
+          },  {
+            "type": "location",
+            "lat": "30.580408",
+            "lng": "-96.293922",
+            "name": "Cock Prairie"
+          },
+      ]
+
+    json = JSON.stringify(message)
+
+    options =
+      agent: false
+      host: "api.groupme.com"
+      path: "/v3/bots/post"
+      port: 443
+      method: "POST"
+      headers:
+        'Content-Length': json.length
+        'Content-Type': 'application/json'
+        'X-Access-Token': token
+
+    req = https.request options, (response) ->
+      data = ''
+      response.on 'data', (chunk) -> data += chunk
+      response.on 'end', ->
+        console.log "[GROUPME RESPONSE] #{response.statusCode} #{data}"
+    req.end(json)
   
 
   robot.hear /(.*)@all(.*)/i, (res) ->
