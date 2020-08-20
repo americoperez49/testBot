@@ -121,13 +121,19 @@ module.exports = (robot) ->
     message =
       'text': text,
       'bot_id': bot_id,
-      'attachments': [ 
-          {
-            "type": "location",
-            "lat": "30.580408",
-            "lng": "-96.293922",
-            "name": "Cock-Prairie"
-          }
+      'attachments': [
+        {
+          "type": "location",
+          "lat": "30.6441",
+          "lng": "-96.3648",
+          "name": "Williamshlong"
+        },  
+        {
+          "type": "location",
+          "lat": "30.580408",
+          "lng": "-96.293922",
+          "name": "Cock-Prairie"
+        }
       ]
 
     json = JSON.stringify(message)
