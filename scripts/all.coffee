@@ -138,6 +138,8 @@ module.exports = (robot) ->
 
     json = JSON.stringify(message)
 
+    res.send json
+
     options =
       agent: false
       host: "api.groupme.com"
