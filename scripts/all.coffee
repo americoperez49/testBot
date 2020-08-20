@@ -121,13 +121,7 @@ module.exports = (robot) ->
     message =
       'text': text,
       'bot_id': bot_id,
-      'attachments': [
-          {
-            "type": "location",
-            "lat": "30.6441",
-            "lng": "-96.3648",
-            "name": "Williamshlong"
-          },  
+      'attachments': [ 
           {
             "type": "location",
             "lat": "30.580408",
