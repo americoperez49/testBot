@@ -123,10 +123,6 @@ module.exports = (robot) ->
       'bot_id': bot_id,
       'attachments': [
           {
-            "type":"image",
-            "url":"https://www.google.com/maps/place/Williamson+Skate+Park/@30.6439544,-96.3649558,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipPyxH7OeA39GbC5tqBzOmUJi3aCQktSx9U3mLbQ!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPyxH7OeA39GbC5tqBzOmUJi3aCQktSx9U3mLbQ%3Dw86-h152-k-no!7i2340!8i4160!4m5!3m4!1s0x0:0x578d6816b9232b8e!8m2!3d30.6441164!4d-96.3647806#"
-          },
-          {
             "type": "location",
             "lat": "30.6441",
             "lng": "-96.3648",
