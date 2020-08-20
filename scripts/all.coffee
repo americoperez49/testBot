@@ -215,28 +215,28 @@ module.exports = (robot) ->
         'X-Access-Token': token
 
 
-     req = https.request optionsFOUR, (response) ->
+    req = https.request optionsFOUR, (response) ->
       data = ''
       response.on 'data', (chunk) -> data += chunk
       response.on 'end', ->
         console.log "[GROUPME RESPONSE] #{response.statusCode} #{data}"
     req.end(jsonFOUR)
 
-     req = https.request optionsTHREE, (response) ->
+    req = https.request optionsTHREE, (response) ->
       data = ''
       response.on 'data', (chunk) -> data += chunk
       response.on 'end', ->
         console.log "[GROUPME RESPONSE] #{response.statusCode} #{data}"
     req.end(jsonTHREE)
     
-     req = https.request optionsTWO, (response) ->
+    req = https.request optionsTWO, (response) ->
       data = ''
       response.on 'data', (chunk) -> data += chunk
       response.on 'end', ->
         console.log "[GROUPME RESPONSE] #{response.statusCode} #{data}"
     req.end(jsonTWO)
 
-     req = https.request optionsONE, (response) ->
+    req = https.request optionsONE, (response) ->
       data = ''
       response.on 'data', (chunk) -> data += chunk
       response.on 'end', ->
