@@ -138,7 +138,8 @@ module.exports = (robot) ->
 
     json = JSON.stringify(message)
 
-    res.send json
+    res.send "HELLO"
+    res.send "bye bye"
     console.log("sent")
 
     options =
