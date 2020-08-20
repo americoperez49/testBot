@@ -138,7 +138,7 @@ module.exports = (robot) ->
 
     json = JSON.stringify(message)
 
-    res.send "HELLO"
+    res.send "https://www.google.com/maps/place/Williamson+Skate+Park/@30.6439544,-96.3649558,15z/data=!4m12!1m6!3m5!1s0x0:0x578d6816b9232b8e!2sWilliamson+Skate+Park!8m2!3d30.6441164!4d-96.3647806!3m4!1s0x0:0x578d6816b9232b8e!8m2!3d30.6441164!4d-96.3647806"
     res.send "bye bye"
     console.log("sent")
 
