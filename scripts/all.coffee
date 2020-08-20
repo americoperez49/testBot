@@ -140,9 +140,35 @@ module.exports = (robot) ->
             "name": "Cock-Prairie"
           }
       ]
+    
+    messageTHREE =
+      'text': "Spot #3",
+      'bot_id': bot_id,
+      'attachments': [
+          {
+            "type": "location",
+            "lat": "30.6172",
+            "lng": "96.3438",
+            "name": "Sbisa"
+          }
+      ]
+
+    messageFOUR =
+      'text': "Spot #4",
+      'bot_id': bot_id,
+      'attachments': [
+          {
+            "type": "location",
+            "lat": "30.615981",
+            "lng": "-96.345147",
+            "name": "The Courts"
+          }
+      ]
 
     jsonONE = JSON.stringify(messageONE)
     jsonTWO = JSON.stringify(messageTWO)
+    jsonTHREE = JSON.stringify(messageTHREE)
+    jsonFOUR = JSON.stringify(messageFOUR)
 
     optionsONE =
       agent: false
@@ -165,20 +191,57 @@ module.exports = (robot) ->
         'Content-Length': jsonTWO.length
         'Content-Type': 'application/json'
         'X-Access-Token': token
+    
+    optionsTHREE =
+      agent: false
+      host: "api.groupme.com"
+      path: "/v3/bots/post"
+      port: 443
+      method: "POST"
+      headers:
+        'Content-Length': jsonTHREE.length
+        'Content-Type': 'application/json'
+        'X-Access-Token': token
 
-    req = https.request optionsONE, (response) ->
+    optionsFOUR =
+      agent: false
+      host: "api.groupme.com"
+      path: "/v3/bots/post"
+      port: 443
+      method: "POST"
+      headers:
+        'Content-Length': jsonFOUR.length
+        'Content-Type': 'application/json'
+        'X-Access-Token': token
+
+
+     req = https.request optionsFOUR, (response) ->
       data = ''
       response.on 'data', (chunk) -> data += chunk
       response.on 'end', ->
         console.log "[GROUPME RESPONSE] #{response.statusCode} #{data}"
-    req.end(jsonONE)
+    req.end(jsonFOUR)
 
-    req = https.request optionsTWO, (response) ->
+     req = https.request optionsTHREE, (response) ->
+      data = ''
+      response.on 'data', (chunk) -> data += chunk
+      response.on 'end', ->
+        console.log "[GROUPME RESPONSE] #{response.statusCode} #{data}"
+    req.end(jsonTHREE)
+    
+     req = https.request optionsTWO, (response) ->
       data = ''
       response.on 'data', (chunk) -> data += chunk
       response.on 'end', ->
         console.log "[GROUPME RESPONSE] #{response.statusCode} #{data}"
     req.end(jsonTWO)
+
+     req = https.request optionsONE, (response) ->
+      data = ''
+      response.on 'data', (chunk) -> data += chunk
+      response.on 'end', ->
+        console.log "[GROUPME RESPONSE] #{response.statusCode} #{data}"
+    req.end(jsonONE)
 
   robot.hear /help/i, (res) ->
     res.send "Here are things you can do:" + "\n\t" + "1. Type @all to mention everyone" + "\n\t" + "2. Type /skateSpots to get locations of usual skate spots around town."
