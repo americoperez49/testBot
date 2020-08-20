@@ -118,7 +118,7 @@ module.exports = (robot) ->
     text = res.match[0]
 
     messageONE =
-      'text': text,
+      'text': "Park #1",
       'bot_id': bot_id,
       'attachments': [
           {
@@ -130,7 +130,7 @@ module.exports = (robot) ->
       ]
 
     messageTWO =
-      'text': text,
+      'text': "Park #2",
       'bot_id': bot_id,
       'attachments': [
           {
