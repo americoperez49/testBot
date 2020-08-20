@@ -113,7 +113,7 @@ module.exports = (robot) ->
     else
       res.send "Could not find a user by the name #{target}"
   
-  robot.hear /parks/i, (res) ->
+  robot.hear /skateSpots/i, (res) ->
     """@all command"""
     text = res.match[0]
 
@@ -181,7 +181,7 @@ module.exports = (robot) ->
     req.end(jsonTWO)
 
   robot.hear /help/i, (res) ->
-    res.send "Here are the things you can do" + "\n" + "test"
+    res.send "Here are the things you can do:" + "\n" + "type @all to mention everyone" + "\n" + "type /skateSpots to get locations of usual skate spots around town."
 
   robot.hear /(.*)@all(.*)/i, (res) ->
     """@all command"""
