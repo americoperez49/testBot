@@ -1,1 +1,1 @@
-web: node index.js
+web: bin/hubot -a groupme
