@@ -115,9 +115,11 @@ module.exports = (robot) ->
   
   robot.hear /parks/i, (res) ->
     """@all command"""
+    text = res.match[0]
+
 
     message =
-      'text': Skateparks,
+      'text': text,
       'bot_id': bot_id,
       'attachments': [
           {
