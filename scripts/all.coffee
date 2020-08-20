@@ -132,7 +132,7 @@ module.exports = (robot) ->
             "type": "location",
             "lat": "30.580408",
             "lng": "-96.293922",
-            "name": "Cock Prairie"
+            "name": "Cock-Prairie"
           },
       ]
 
