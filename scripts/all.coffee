@@ -127,27 +127,13 @@ module.exports = (robot) ->
             "lat": "30.6441",
             "lng": "-96.3648",
             "name": "Williamshlong"
-          },  {
+          },  
+          {
             "type": "location",
             "lat": "30.580408",
             "lng": "-96.293922",
             "name": "Cock-Prairie"
-          },
-             {
-          "type": "emoji",
-          "placeholder": "☃",
-          "charmap": [
-            [
-              1,
-              42
-            ],
-            [
-              2,
-              34
-            ]
-          ]
-        }
-
+          }
       ]
 
     json = JSON.stringify(message)
