@@ -1,48 +1,27 @@
-# GroupMe @all
+# Sample GroupMe NodeJS Bot using MeBots
+[**Python**](https://github.com/ErikBoesen/mebots-example-python) | **JavaScript** | [**Ruby**](https://github.com/ErikBoesen/mebots-example-ruby)
 
-@all is a GroupMe chat bot built on [Hubot][hubot]. It was configured to be
-deployed on [Heroku][heroku] to get you up and running as quick as possible.
+## Introduction
 
-[heroku]: http://www.heroku.com
-[hubot]: http://hubot.github.com
-
-
-## Features
-
-Mention (tag) everyone in your group at once!
-
-Blacklist users who don't need notifications.
-
-Deploy to heroku easily!
+A simple GroupMe bot that reacts to messages sent within a group, designed to demonstrate how to use the MeBots API and serve as a template for other bots.
 
 
-### Deploying to Heroku
+## Setup
+Open `index.js` in your favorite editor and find the line where the bot is instantiated:
+```js
+let bot = new mebots.Bot('your_bot_shortname_here', process.env.BOT_TOKEN;
+```
+Replace `your_bot_shortname_here` with the shortname of your bot, which is visible while editing your bot on the MeBots web interface.
 
-1. Fork the repository to your GitHub account
-2. Log in to Heroku
-3. Create a new app
-4. Deploy from your GitHub and select the repo
-5. Configure environment variables (and optionally Redis)
+Then, set the `BOT_TOKEN` environment variable in your shell to the token available in the bot editing panel.
+```sh
+export BOT_TOKEN=0123456789abcdef
+```
+Or on Heroku:
+```sh
+heroku config:set BOT_TOKEN=0123456789abcdef
+```
 
-
-### Configuration
-
-Start by configuring the environment variables below:
-
-- HUBOT_GROUPME_TOKEN
-- HUBOT_GROUPME_ROOM_ID
-- HUBOT_GROUPME_BOT_ID
-
-And optionally configure a Redis server for blacklist persistence.
-
-
-### Running
-
-Once configured, you can run the bot with `./bin/hubot -a groupme`. 
-
-You should now be able to open the GroupMe room you've chosen and tag everyone in the group by mentioning @all!
-
-
-## For more help
-
-Since this is one of my most popular repos, I wrote a [blog post](https://hawkins.github.io/2016/10/11/groupme-at-all/) on configuring and extending this project. Please check this out if you have trouble! Finally, I'm always happy to help you with any other troubles that may come up. Please either [open a new issue](https://github.com/hawkins/groupme-at-all/issues/new) or [send me an email :)](mailto:hawkinswritescode@gmail.com)
+## Author
+- [Erik Boesen](https://github.com/ErikBoesen)
+- [Will Shadow](https://github.com/thewilloftheshadow)
