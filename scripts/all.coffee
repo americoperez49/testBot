@@ -129,7 +129,7 @@ module.exports = (robot) ->
           }
       ]
 
-       messageTWO =
+    messageTWO =
       'text': text,
       'bot_id': bot_id,
       'attachments': [
