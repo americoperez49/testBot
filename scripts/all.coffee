@@ -112,6 +112,10 @@ module.exports = (robot) ->
       res.send "Whitelisted #{target} successfully"
     else
       res.send "Could not find a user by the name #{target}"
+  
+  robot.hear /badger/i, (res) ->
+    res.send "we dont need badgers"
+  
 
   robot.hear /(.*)@all(.*)/i, (res) ->
     """@all command"""
