@@ -1,6 +1,6 @@
 // Set the bot token from MeBots in .env under BOT_TOKEN
 let mebots = require('mebots');
-let bot = new mebots.Bot('your_bot_shortname_here', process.env.BOT_TOKEN);
+let bot = new mebots.Bot('aang', process.env.BOT_TOKEN);
 
 // Setup our web routing
 const express = require("express");
