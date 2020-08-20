@@ -1,4 +1,5 @@
 # GroupMe @all
+test
 
 @all is a GroupMe chat bot built on [Hubot][hubot]. It was configured to be
 deployed on [Heroku][heroku] to get you up and running as quick as possible.
