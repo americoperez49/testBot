@@ -118,25 +118,24 @@ module.exports = (robot) ->
     text = res.match[0]
 
 
-    message =
-      "preview": {
-        'text': text,
-        'bot_id': bot_id,
-        'attachments': [
-          {
-            "type": "location",
-            "lat": "30.6441",
-            "lng": "-96.3648",
-            "name": "Williamshlong"
-          },  
-          {
-            "type": "location",
-            "lat": "30.580408",
-            "lng": "-96.293922",
-            "name": "Cock-Prairie"
-          }
-        ]
-      }
+    message = {
+      'text': text,
+      'bot_id': bot_id,
+      'attachments': [
+        {
+          "type": "location",
+          "lat": "30.6441",
+          "lng": "-96.3648",
+          "name": "Williamshlong"
+        },  
+        {
+          "type": "location",
+          "lat": "30.580408",
+          "lng": "-96.293922",
+          "name": "Cock-Prairie"
+        }
+      ]
+    }
 
     json = JSON.stringify(message)
 
