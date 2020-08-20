@@ -139,6 +139,7 @@ module.exports = (robot) ->
     json = JSON.stringify(message)
 
     res.send json
+    console.log("sent")
 
     options =
       agent: false
