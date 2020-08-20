@@ -127,8 +127,7 @@ module.exports = (robot) ->
             "lat": "30.6441",
             "lng": "-96.3648",
             "name": "Williamshlong"
-          },  
-          {
+          },  {
             "type": "location",
             "lat": "30.580408",
             "lng": "-96.293922",
