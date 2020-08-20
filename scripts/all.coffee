@@ -181,7 +181,7 @@ module.exports = (robot) ->
     req.end(jsonTWO)
 
   robot.hear /help/i, (res) ->
-    res.send "Here are the things you can do:" + "\n" + "type @all to mention everyone" + "\n" + "type /skateSpots to get locations of usual skate spots around town."
+    res.send "Here are the things you can do:" + "\n" + "1. type @all to mention everyone" + "\n" + "2. type /skateSpots to get locations of usual skate spots around town."
 
   robot.hear /(.*)@all(.*)/i, (res) ->
     """@all command"""
